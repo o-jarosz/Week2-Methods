@@ -1,9 +1,14 @@
-﻿Main();
+﻿using Week2_Methods;
 
-void Main()
+Main();
+
+static void Main()
 {
     try
     {
+        Console.WriteLine("Please enter your name:");
+        string name = Console.ReadLine();
+        Hello.SayHello(name);
         double length = 0;
         double width = 0;
         Console.WriteLine("PLease enter rectangle length");
@@ -22,7 +27,7 @@ void Main()
         }
 
         // Calling the method and storing the result
-        double area = CalculateArea(length, width);
+        double area = Hello.CalculateArea(length, width);
 
         // Output the result
         Console.WriteLine($"The area of the rectangle is: {area}");
@@ -37,9 +42,3 @@ void Main()
 // 'CalculateArea' is the method name
 // 'double' is the return type
 // 'double length' and 'double width' are parameters
-static double CalculateArea(double length, double width)
-{
-    // Method body
-    double area = length * width;
-    return area; // Returning the calculated area
-}
