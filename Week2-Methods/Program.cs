@@ -1,1 +1,45 @@
-﻿Console.WriteLine("Hello, World!");
+﻿Main();
+
+void Main()
+{
+    try
+    {
+        double length = 0;
+        double width = 0;
+        Console.WriteLine("PLease enter rectangle length");
+        string lengthInput = Console.ReadLine();
+        while (!double.TryParse(lengthInput, out length))
+        {
+            Console.WriteLine("Please enter a valid number for length.");
+            lengthInput = Console.ReadLine();
+        }
+        Console.WriteLine("Please enter rectangle width");
+        string widthInput = Console.ReadLine();
+        while (!double.TryParse(widthInput, out width))
+        {
+            Console.WriteLine("Please enter a valid number for width.");
+            widthInput = Console.ReadLine();
+        }
+
+        // Calling the method and storing the result
+        double area = CalculateArea(length, width);
+
+        // Output the result
+        Console.WriteLine($"The area of the rectangle is: {area}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+}
+
+// Method declaration
+// 'CalculateArea' is the method name
+// 'double' is the return type
+// 'double length' and 'double width' are parameters
+static double CalculateArea(double length, double width)
+{
+    // Method body
+    double area = length * width;
+    return area; // Returning the calculated area
+}
