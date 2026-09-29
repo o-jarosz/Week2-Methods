@@ -37,8 +37,3 @@ static void Main()
         Console.WriteLine($"Error: {ex.Message}");
     }
 }
-
-// Method declaration
-// 'CalculateArea' is the method name
-// 'double' is the return type
-// 'double length' and 'double width' are parameters
